@@ -1,1 +1,1 @@
-# my-first-tool
+# kali-setup
