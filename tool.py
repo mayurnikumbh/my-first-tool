@@ -6,6 +6,12 @@
 import re
 import socket
 import time
+import sys
+
+# =======================
+# VERSION
+# =======================
+VERSION = "1.0"
 
 # =======================
 # FUNCTIONS
@@ -48,12 +54,20 @@ def risk_check(url):
 def banner():
     print("\033[1;36m")
     print("===================================")
-    print("      KALI SETUP - URL CHECKER     ")
+    print("   KALI SETUP - URL CHECKER")
+    print(f"           Version v{VERSION}")
     print("===================================")
     print("\033[0m")
 
 
 def main():
+
+    # -------- VERSION ARGUMENT --------
+    if len(sys.argv) > 1:
+        if sys.argv[1] in ["-v", "--version"]:
+            print(f"Kali Setup Version v{VERSION}")
+            return
+
     banner()
 
     if not internet_available():
